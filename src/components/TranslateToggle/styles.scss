@@ -1,0 +1,75 @@
+/*
+    •--------------------------------•
+    |                                |
+    |     © 2021 Matthew Perlman     |
+    |                                |
+    •--------------------------------•
+*/
+
+.translateToggleButton {
+    position: absolute;
+    right: 15px;
+    width: 45px;
+    height: 32.5px;
+    background-color: rgba(45, 58, 133, 0.95);
+    border-radius: 5px;
+    text-align: center;
+
+    .icon {
+        position: relative;
+        color: rgb(243, 243, 243);
+        font-size: 30px;
+        transform: translateY(calc((32.5px - 100%) * 0.5));
+    }
+}
+
+.translateToggleButton:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.translateOptions {
+    position: absolute;
+    right: 15px;
+    padding: 5px;
+    background-color: rgba(0,0,0,0.55);
+    border-radius: 15px;
+    border-bottom-right-radius: 0;
+    border: 2px solid rgba(0,0,0,0.1);
+    transform-origin: 100% 100%;
+    transition: transform 0.25s;
+
+    .option {
+        width: 120px;
+        height: 38px;
+        margin: 2.5px;
+        margin-bottom: 12.5px;
+        text-align: center;
+        background-color: rgba(107, 123, 218, 0.95);
+        border-radius: 10px;
+        transition: box-shadow 0.3s;
+
+        .text {
+            position: relative;
+            color: rgb(255,255,255);
+            transform: translateY(calc(19px - 50%));
+            font-family: "Titillium Web";
+            font-size: 20px;
+        }
+    }
+
+    .option:last-of-type {
+        margin-bottom: 0;
+    }
+    
+    .option:hover {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    }
+}
+
+.show {
+    transform: scale(1);
+}
+
+.hide {
+    transform: scale(0);
+}

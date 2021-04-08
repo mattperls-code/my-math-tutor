@@ -1,0 +1,45 @@
+/*
+    •--------------------------------•
+    |                                |
+    |     © 2021 Matthew Perlman     |
+    |                                |
+    •--------------------------------•
+*/
+
+.explanatoryBoxes {
+    text-align: center;
+    flex-wrap: wrap;
+
+    .box {
+        vertical-align: top;
+        display: inline-block;
+        width: calc(max(310px, 8vw + 220px));
+        min-height: calc(max(290px, 8vw + 200px));
+        padding-bottom: 20px;
+        margin: calc(max(1.5vw, 22.5px));
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 15%;
+        box-shadow: 0 0 calc(max(2vw, 30px)) rgba(255, 255, 255, 0.5);
+        transition: box-shadow 0.5s;
+    
+        .title {
+            margin-top: 6%;
+            font-size: calc(max(280px, 8vw + 165px) * 0.11);
+            font-family: "Titillium Web";
+            color: white;
+        }
+        
+        .explanation {
+            margin: auto;
+            margin-top: 5px;
+            width: 75%;
+            font-size: calc(max(280px, 8vw + 165px) * 0.055);
+            font-family: "Titillium Web";
+            color: white;
+        }
+    }
+    
+    .box:hover {
+        box-shadow: 0 0 calc(max(3vw, 45px)) white;
+    }
+}

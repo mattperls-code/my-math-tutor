@@ -1,0 +1,66 @@
+/*
+    •--------------------------------•
+    |                                |
+    |     © 2021 Matthew Perlman     |
+    |                                |
+    •--------------------------------•
+*/
+
+.tutorialContainer {
+    margin-top: 60px;
+
+    .introduction, .instructions {
+        text-align: center;
+        color: white;
+        font-family: "Titillium Web";
+        font-size: calc(20px + 0.5vw);
+        line-height: calc(26px + 1.15vw);
+        width: calc(80vw - 25px);
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+    .problemsLabel {
+        margin:auto;
+        margin-top: 85px;
+        width: 90vw;
+        color: rgb(255, 255, 255);
+        font-size: calc(min(65px, 11vw) * 0.6);
+        line-height: calc(min(80px, 12.5vw) * 0.6);
+        font-family: "Comfortaa";
+        font-weight: 900;
+        text-align: center;
+        letter-spacing: 0.4vw;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+        white-space: wrap;
+    }
+
+    .problemContainer {
+        display: flex;
+        width: 87.5vw;
+        margin: auto;
+        margin-top: 35px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        .problem {
+            vertical-align: top;
+            align-self: flex-start;
+            margin: 25px 20px;
+            padding: 50px;
+            width: calc(20vw + 100px);
+            border-radius: calc(2vw + 20px);
+            background-color: rgba(0, 0, 0, 0.15);
+
+            text-align: center;
+            color: white;
+            font-family: "Titillium Web";
+            font-size: 18px;
+            line-height: calc(34px);
+        }
+
+        .problem:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}

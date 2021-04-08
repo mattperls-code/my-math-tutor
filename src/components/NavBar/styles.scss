@@ -1,0 +1,175 @@
+/*
+    •--------------------------------•
+    |                                |
+    |     © 2021 Matthew Perlman     |
+    |                                |
+    •--------------------------------•
+*/
+
+.navBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 25px;
+    height: 70px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.35);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    z-index: 100;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+    .searchBarContainer {
+        float: right;
+        margin-right: 15px;
+        width: 250px;
+        height: 70px;
+
+        .searchBarInput {
+            position: absolute;
+            top: 15px;
+            bottom: 15px;
+            width: 220px;
+            border:none;
+            padding: 5px 15px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255,255,255,0.5);
+            text-align: center;
+            font-size: 15px;
+            font-family: "Titillium Web";
+            color: rgb(60, 37, 88);
+            transform: translateX(calc(-50% + 20px));
+            transition: 0.5s;
+        }
+    
+        .searchBarInput:focus {
+            box-shadow: 0 0 20px rgb(255,255,255);
+            outline: none;
+        }
+        
+        .searchBarInput::placeholder {
+            font-family: "Titillium Web";
+            color: rgb(138, 120, 161);
+        }
+
+        .searchResultsContainer {
+            position: absolute;
+            top: 90px;
+            transform-origin: 115px 0px;
+            z-index: 100;
+            transition: transform 0.25s;
+
+            .searchResults {
+                position: absolute;
+                padding-bottom: 10px;
+                border-radius: 20px;
+                transform: translateX(5px);
+                background-color: rgba(0, 0, 0, 0.55);
+    
+                .result {
+                    font-family: "Titillium Web";
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 20px;
+                    margin: 10px;
+                    margin-bottom: 0;
+                    padding: 10px;
+                    width: 240px;
+                    border-radius: 15px;
+                    background-color: rgba(107, 123, 218, 0.95);
+                    color: white;
+
+                    .lineBreak {
+                        height: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .smallText {
+        display: inline-block;
+        font-family: "Comfortaa";
+        font-size: 26px;
+        color: rgb(228, 228, 228);
+        transform: translateY(calc(35px - 50%));
+    }
+}
+
+.hamburgerMenuIcon {
+    float: left;
+    font-size: 30px;
+    transform: translate(calc(25px - 50%),calc(35px - 50%));
+    color: rgb(255, 255, 255);
+    filter: drop-shadow(0 0 30px rgba(255,255,255,0.8));
+    transition: 0.5s;
+}
+
+.hamburgerMenuIcon:hover {
+    filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+}
+
+.hamburgerMenu {
+    position: absolute;
+    top: 85px;
+    width: calc(80px + 20vw);
+    background-color:rgba(0,0,0,0.55);
+    border-radius: calc(10px + 2vw);
+    border-top-left-radius: 0;
+    border: 2px solid rgba(0,0,0,0.1);
+    z-index: 100;
+    transform-origin: 0% 0%;
+    transition: transform 0.25s;
+
+    .option {
+        margin: 10px;
+        padding: 7.5px 5px;
+        font-family: "Titillium Web";
+        font-size: calc(10px + 2.5vw);
+        background-color: rgba(107, 123, 218, 0.95);
+        border-radius: calc(4px + 1vw);
+        color: white;
+        transition: box-shadow 0.3s
+    }
+
+    .option:hover {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    }
+}
+
+.navIconContainer {
+    width: 70px;
+    height: 70px;
+    margin: 0 15px;
+    text-align: center;
+
+    .icon {
+        font-size: 40px;
+        transform: translateY(calc(35px - 50%));
+        color: rgb(255, 255, 255);
+        filter: drop-shadow(0 0 30px rgba(255,255,255,0.8));
+        transition: 0.5s;
+        user-select: none;
+    }
+    
+    .icon:hover {
+        filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+    }
+    
+    .label {
+        margin-top: 45px;
+        display: inline-block;
+        font-family: "Comfortaa";
+        font-size: 25px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(173, 164, 226);
+        border-radius: 15px;
+        padding: 10px;
+        text-shadow: 0 0 15px white;
+        transform: translateX(calc(35px - 50%));
+        transition: 0.5s;
+        z-index: 200;
+        user-select: none;
+    }
+}

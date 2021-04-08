@@ -1,0 +1,150 @@
+/*
+    •--------------------------------•
+    |                                |
+    |     © 2021 Matthew Perlman     |
+    |                                |
+    •--------------------------------•
+*/
+
+.page {
+    width: calc(min(120px + 77.5vw, 85vw));
+    text-align: center;
+    padding: 10px 5px;
+    margin: auto;
+    margin-top: calc(7.5vh + 20px);
+    margin-bottom: 100px;
+    padding-top: 20px;
+    border-radius: calc((80px + 70vw) * 0.06);
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.75);
+
+    * {
+        vertical-align: middle;
+    }
+
+    .download {
+        position: absolute;
+        transform: translate(calc(min(120px + 77.5vw, 85vw) - 100% - 20px), calc(-100% - 25px));
+
+        .text {
+            float: left;
+            font-family: "Titillium Web";
+            font-size: calc((4.75vw + 250px) * 0.07);
+            color: white;
+        }
+
+        .button {
+            float: left;
+            margin: calc((4.75vw + 250px) * 0.02);
+            margin-left: 7.5px;
+            margin-right: 10px;
+            font-size: calc((4.75vw + 250px) * 0.08);
+            color: white;
+        }
+    }
+
+    .problem {
+        display: inline-block;
+        width: calc(4.75vw + 250px);
+        height: calc((4.75vw + 250px) * 1.2);
+        margin: 15px;
+
+        .number {
+            text-align: left;
+            font-family: "Titillium Web";
+            font-size: calc((4.75vw + 250px) * 0.065);
+            margin-bottom: 10%;
+        }
+
+        .revealSolutionButton {
+            position: absolute;
+            transform: translate(calc((4.75vw + 250px) * 0.5 - 50%), calc((4.75vw + 250px) * 0.4 - 50%));
+            padding: calc((4.75vw + 250px) * 0.035) calc((4.75vw + 250px) * 0.15);
+            border-radius: calc((4.75vw + 250px) * 0.1);
+            border: solid calc((4.75vw + 250px) * 0.015) rgba(0, 0, 0, 0.15);
+            background-color: rgba(107, 123, 218, 0.95);
+            color: white;
+            font-family: "Titillium Web";
+            font-size: calc((4.75vw + 250px) * 0.06);
+            line-height: calc((4.75vw + 250px) * 0.075);
+            z-index: 100;
+        }
+
+        .text {
+            font-family: "Titillium Web";
+            font-size: calc((4.75vw + 250px) * 0.065);
+            transition: filter 0.25s;
+
+            .fraction {
+                display: inline-block;
+                text-align: center;
+                line-height: 100%;
+                margin-right: 3px;
+
+                .slash {
+                    display: none;
+                }
+
+                .denominator {
+                    border-top: 1px solid black;
+                }
+            }
+        }
+
+        .blur {
+            filter: blur(1em);
+            text-shadow: 0 0 0.5em black;
+            font-weight: 900;
+            transform: scale(1.5);
+        }
+    }
+}
+
+.page:last-child {
+    margin-bottom: 0px;
+}
+
+.downloadablePage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1200px;
+    height: 1400px;
+    padding-top: 250px;
+    padding-bottom: 100px;
+    background-color: white;
+    justify-content: space-evenly;
+
+    .problem {
+        width: 280px;
+        height: 260px;
+        margin: 15px;
+
+        .number {
+            font-size: 20px;
+            margin-bottom: 10%;
+        }
+
+        .text {
+            margin-top: 10px;
+            font-size: 17.5px;
+            text-align: center;
+
+            .fraction {
+                display: inline-block;
+                text-align: center;
+                line-height: 100%;
+                margin-right: 3px;
+                transform: translateY(25%);
+
+                .slash {
+                    display: none;
+                }
+
+                .denominator {
+                    border-top: 1px solid black;
+                }
+            }
+        }
+    }
+}

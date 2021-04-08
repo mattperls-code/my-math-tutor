@@ -1,0 +1,23 @@
+{
+    "short_name": "My Math Tutor",
+    "name": "My Math Tutor",
+    "description": "A Website To Pracice Math",
+    "icons": [
+        {
+            "src": "./favicon/favicon_192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "./favicon/favicon_512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/my-math-tutor/#Main",
+    "display": "standalone",
+    "theme_color": "rgb(107, 123, 218)",
+    "background_color": "rgb(107, 123, 218)"
+}

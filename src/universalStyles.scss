@@ -1,0 +1,66 @@
+/*
+    •--------------------------------•
+    |                                |
+    |     © 2021 Matthew Perlman     |
+    |                                |
+    •--------------------------------•
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Titillium+Web:wght@200;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+a {
+    color: transparent;
+    -webkit-tap-highlight-color: transparent;
+}
+
+h1 {
+    margin:auto;
+    margin-top: 85px;
+    max-width: 90vw;
+    color: rgb(255, 255, 255);
+    font-size: calc(min(65px, 11vw));
+    line-height: calc(min(80px, 12.5vw));
+    font-family: "Comfortaa";
+    font-weight: 900;
+    text-align: center;
+    overflow-wrap: break-word;
+    letter-spacing: 0.6vw;
+    text-shadow: 0 0 5px white;
+    white-space: wrap;
+}
+
+.wrapper {
+    margin-top: calc(2.5vh + 35px);
+    margin-bottom: 7.5vh;
+    min-height: calc(72.5vh - 135px);
+}
+
+main {
+    .description {
+        text-align: center;
+        color: white;
+        font-family: "Titillium Web";
+        font-size: calc(20px + 1vw);
+        letter-spacing: calc(0.5px + 0.05vw);
+        line-height: calc(30px + 1.5vw);
+        width: calc(95vw - 30px);
+        margin: auto;
+    }
+}
+
+.show {
+    transform: scale(1);
+}
+
+.hide {
+    transform: scale(0);
+}

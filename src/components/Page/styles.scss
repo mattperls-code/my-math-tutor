@@ -1,0 +1,45 @@
+/*
+    •--------------------------------•
+    |                                |
+    |     © 2021 Matthew Perlman     |
+    |                                |
+    •--------------------------------•
+*/
+
+.bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:
+        linear-gradient(to left, rgba(54, 90, 207, 0.9), rgba(110, 110, 110, 0)),
+        linear-gradient(to top right, rgba(64, 36, 161, 0.9), rgba(104, 104, 104, 0)),
+        rgba(255, 255, 255, 0.2);
+    background-blend-mode:overlay;
+
+    .imageOverlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: url("../../assets/mathTextOverlay.png");
+        background-size: contain;
+        background-repeat: repeat;
+        opacity: 0.04;
+    }
+
+    .content {
+        position: absolute;
+        top: 70px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: scroll;
+    }
+
+    .content::-webkit-scrollbar {
+        display: none;
+    }
+}

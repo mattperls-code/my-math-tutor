@@ -1,0 +1,60 @@
+/*
+    •--------------------------------•
+    |                                |
+    |     © 2021 Matthew Perlman     |
+    |                                |
+    •--------------------------------•
+*/
+
+.searchBarListContainer {
+    width: calc(100vw - 20px);
+    margin: auto;
+    margin-top: calc(2.5vh + 10px);
+    text-align: center;
+
+    .result {
+        display: inline-block;
+        width: calc(min(max(20vw, 5vw + 280px), 85vw) - 20px);
+        padding: 10px;
+        border-radius: calc(min(max(20vw, 5vw + 280px), 85vw) * 0.1);
+        margin: calc(2vh + 5px) calc(2vw + 5px);
+        background-color: rgba(0,0,0,0.1);
+        box-shadow: 0 0 calc(max(2vw, 30px)) rgba(255, 255, 255, 0.5);
+        vertical-align: top;
+        transition: box-shadow 0.5s;
+
+        h3 {
+            font-family: "Titillium Web";
+            font-size: calc(max(25vh + 60px, 280px) * 0.09);
+            width: 90%;
+            margin: auto;
+            margin-top: calc(max(25vh + 60px, 280px) * 0.05);
+            margin-bottom: calc(max(25vh + 60px, 280px) * 0.05);
+            color: white;
+        }
+
+        .image {
+            height: calc(max(25vh + 60px, 280px) * 0.75);
+            max-width: 80%;
+            margin: 0;
+            margin-bottom: 5px;
+            padding: 0;
+            border-radius: calc(max(25vh + 60px, 280px) * 0.05);
+        }
+
+        .description {
+            padding: 0;
+            margin: auto;
+            margin-top: 0;
+            width: 80%;
+            color: white;
+            font-family: "Titillium Web";
+            font-size: calc(max(25vh + 60px, 280px) * 0.065);
+            line-height:normal;
+        }
+    }
+
+    .result:hover {
+        box-shadow: 0 0 calc(max(3vw, 45px)) white;
+    }
+}

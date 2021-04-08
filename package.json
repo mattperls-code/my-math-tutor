@@ -1,0 +1,59 @@
+{
+  "name": "my-math-tutor",
+  "version": "1.3.0",
+  "description": "A Website To Learn And Practice Your Math Skills",
+  "author": {
+    "name": "Matthew Perlman",
+    "email": "mattperls.code@gmail.com",
+    "url": "https://github.com/mattperls-code/"
+  },
+  "homepage": "https://mattperls-code.github.io/my-math-tutor/",
+  "repository": {
+    "type": "git",
+    "url": "https://mattperls-code.github.io/my-math-tutor/"
+  },
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.3",
+    "algebra.js": "^0.2.6",
+    "dom-to-image": "^2.6.0",
+    "history": "^5.0.0",
+    "mathjs": "^9.3.0",
+    "node-sass": "^5.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}

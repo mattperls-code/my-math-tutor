@@ -1,0 +1,39 @@
+/*
+    •--------------------------------•
+    |                                |
+    |     © 2021 Matthew Perlman     |
+    |                                |
+    •--------------------------------•
+*/
+
+hr {
+    margin: auto;
+    width: 85%;
+}
+
+.subheader {
+    margin:auto;
+    margin-top: 65px;
+    margin-bottom: 45px;
+    width: 80vw;
+    color: rgb(255, 255, 255);
+    font-size: calc(min(45px, 8vw));
+    line-height: calc(min(70px, 11.5vw));
+    font-family: "Comfortaa";
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.5vw;
+    text-shadow: 0 0 5px white;
+    white-space: wrap;
+}
+
+.subdescription {
+    text-align: center;
+    color: white;
+    font-family: "Titillium Web";
+    font-size: calc(14px + 0.8vw);
+    letter-spacing: calc(0.3px + 0.03vw);
+    line-height: calc(26px + 1.2vw);
+    width: calc(82.5vw - 50px);
+    margin: auto;
+}
