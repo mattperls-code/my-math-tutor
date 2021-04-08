@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/my-math-tutor/static/css/main.e37d5b93.chunk.css",
+    "main.js": "/my-math-tutor/static/js/main.3a0d0e63.chunk.js",
+    "main.js.map": "/my-math-tutor/static/js/main.3a0d0e63.chunk.js.map",
+    "runtime-main.js": "/my-math-tutor/static/js/runtime-main.353a0081.js",
+    "runtime-main.js.map": "/my-math-tutor/static/js/runtime-main.353a0081.js.map",
+    "static/js/2.1ead804d.chunk.js": "/my-math-tutor/static/js/2.1ead804d.chunk.js",
+    "static/js/2.1ead804d.chunk.js.map": "/my-math-tutor/static/js/2.1ead804d.chunk.js.map",
+    "index.html": "/my-math-tutor/index.html",
+    "static/css/main.e37d5b93.chunk.css.map": "/my-math-tutor/static/css/main.e37d5b93.chunk.css.map",
+    "static/js/2.1ead804d.chunk.js.LICENSE.txt": "/my-math-tutor/static/js/2.1ead804d.chunk.js.LICENSE.txt",
+    "static/media/DA.png": "/my-math-tutor/static/media/DA.7cf3a782.png",
+    "static/media/DM.png": "/my-math-tutor/static/media/DM.db246ba7.png",
+    "static/media/DS.png": "/my-math-tutor/static/media/DS.e0557ba5.png",
+    "static/media/DWR.png": "/my-math-tutor/static/media/DWR.eab02d42.png",
+    "static/media/DWoR.png": "/my-math-tutor/static/media/DWoR.33855728.png",
+    "static/media/FF.png": "/my-math-tutor/static/media/FF.6ecb5820.png",
+    "static/media/IA.png": "/my-math-tutor/static/media/IA.87a4caba.png",
+    "static/media/IM.png": "/my-math-tutor/static/media/IM.cc29cf4d.png",
+    "static/media/IS.png": "/my-math-tutor/static/media/IS.7b064b41.png",
+    "static/media/IqR.png": "/my-math-tutor/static/media/IqR.3f7f1f8f.png",
+    "static/media/LOVE.png": "/my-math-tutor/static/media/LOVE.d3a2e9cd.png",
+    "static/media/LOVI.png": "/my-math-tutor/static/media/LOVI.55e6847d.png",
+    "static/media/MAD.png": "/my-math-tutor/static/media/MAD.b928c5da.png",
+    "static/media/Md.png": "/my-math-tutor/static/media/Md.a2790f70.png",
+    "static/media/Mi.png": "/my-math-tutor/static/media/Mi.09ba5c4b.png",
+    "static/media/Mn.png": "/my-math-tutor/static/media/Mn.2c5e1f99.png",
+    "static/media/Mo.png": "/my-math-tutor/static/media/Mo.16146eb9.png",
+    "static/media/Mx.png": "/my-math-tutor/static/media/Mx.4c05e497.png",
+    "static/media/PF.png": "/my-math-tutor/static/media/PF.c9621fb5.png",
+    "static/media/R.png": "/my-math-tutor/static/media/R.f523ec44.png",
+    "static/media/S.png": "/my-math-tutor/static/media/S.9aacf79d.png",
+    "static/media/styles.scss": "/my-math-tutor/static/media/mathTextOverlay.edde6ab0.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.353a0081.js",
+    "static/js/2.1ead804d.chunk.js",
+    "static/css/main.e37d5b93.chunk.css",
+    "static/js/main.3a0d0e63.chunk.js"
+  ]
+}
