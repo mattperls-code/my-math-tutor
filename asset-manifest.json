@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/my-math-tutor/static/css/main.e37d5b93.chunk.css",
-    "main.js": "/my-math-tutor/static/js/main.3a0d0e63.chunk.js",
-    "main.js.map": "/my-math-tutor/static/js/main.3a0d0e63.chunk.js.map",
+    "main.css": "/my-math-tutor/static/css/main.79f36555.chunk.css",
+    "main.js": "/my-math-tutor/static/js/main.6cdeb507.chunk.js",
+    "main.js.map": "/my-math-tutor/static/js/main.6cdeb507.chunk.js.map",
     "runtime-main.js": "/my-math-tutor/static/js/runtime-main.353a0081.js",
     "runtime-main.js.map": "/my-math-tutor/static/js/runtime-main.353a0081.js.map",
-    "static/js/2.1ead804d.chunk.js": "/my-math-tutor/static/js/2.1ead804d.chunk.js",
-    "static/js/2.1ead804d.chunk.js.map": "/my-math-tutor/static/js/2.1ead804d.chunk.js.map",
+    "static/js/2.86ca7e9f.chunk.js": "/my-math-tutor/static/js/2.86ca7e9f.chunk.js",
+    "static/js/2.86ca7e9f.chunk.js.map": "/my-math-tutor/static/js/2.86ca7e9f.chunk.js.map",
     "index.html": "/my-math-tutor/index.html",
-    "static/css/main.e37d5b93.chunk.css.map": "/my-math-tutor/static/css/main.e37d5b93.chunk.css.map",
-    "static/js/2.1ead804d.chunk.js.LICENSE.txt": "/my-math-tutor/static/js/2.1ead804d.chunk.js.LICENSE.txt",
+    "static/css/main.79f36555.chunk.css.map": "/my-math-tutor/static/css/main.79f36555.chunk.css.map",
+    "static/js/2.86ca7e9f.chunk.js.LICENSE.txt": "/my-math-tutor/static/js/2.86ca7e9f.chunk.js.LICENSE.txt",
     "static/media/DA.png": "/my-math-tutor/static/media/DA.7cf3a782.png",
     "static/media/DM.png": "/my-math-tutor/static/media/DM.db246ba7.png",
     "static/media/DS.png": "/my-math-tutor/static/media/DS.e0557ba5.png",
@@ -35,8 +35,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.353a0081.js",
-    "static/js/2.1ead804d.chunk.js",
-    "static/css/main.e37d5b93.chunk.css",
-    "static/js/main.3a0d0e63.chunk.js"
+    "static/js/2.86ca7e9f.chunk.js",
+    "static/css/main.79f36555.chunk.css",
+    "static/js/main.6cdeb507.chunk.js"
   ]
 }
