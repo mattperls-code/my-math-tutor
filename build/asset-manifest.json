@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/my-math-tutor/static/css/main.79f36555.chunk.css",
-    "main.js": "/my-math-tutor/static/js/main.6cdeb507.chunk.js",
-    "main.js.map": "/my-math-tutor/static/js/main.6cdeb507.chunk.js.map",
+    "main.js": "/my-math-tutor/static/js/main.b44d9cb5.chunk.js",
+    "main.js.map": "/my-math-tutor/static/js/main.b44d9cb5.chunk.js.map",
     "runtime-main.js": "/my-math-tutor/static/js/runtime-main.353a0081.js",
     "runtime-main.js.map": "/my-math-tutor/static/js/runtime-main.353a0081.js.map",
     "static/js/2.86ca7e9f.chunk.js": "/my-math-tutor/static/js/2.86ca7e9f.chunk.js",
@@ -37,6 +37,6 @@
     "static/js/runtime-main.353a0081.js",
     "static/js/2.86ca7e9f.chunk.js",
     "static/css/main.79f36555.chunk.css",
-    "static/js/main.6cdeb507.chunk.js"
+    "static/js/main.b44d9cb5.chunk.js"
   ]
 }

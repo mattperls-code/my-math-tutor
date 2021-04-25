@@ -258,7 +258,7 @@ const NavBar = ({ smallText }) => {
                                                 }}>
                                                     <strong style={{fontWeight: 900, fontSize: "22px"}}>
                                                         {
-                                                            searchResult.type + (!searchResult?.noResults && ":")
+                                                            searchResult.type + (searchResult?.noResults ? "" : ":")
                                                         }
                                                     </strong>
                                                     <div className={"lineBreak"}></div>
