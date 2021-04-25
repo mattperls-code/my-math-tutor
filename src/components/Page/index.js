@@ -15,6 +15,8 @@ import BottomBar from "../BottomBar/index"
 
 const Page = ({smallText, children}) => {
 
+    // This component is just to simplify formatting the bottom bar, title, and navigation
+
     return (
         <div className={"bg"}>
             <div className="imageOverlay"></div>

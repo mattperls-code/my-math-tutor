@@ -14,45 +14,14 @@ import Page from "../../components/Page/index"
 import SearchBar from "../../components/SearchBar/index"
 import SearchResults from "../../components/SearchResults/index"
 
-import tutorials from "../../content/tutorials.js"
+import generateSearchResults from "../../scripts/generateSearchResults"
 
-const getTutorialsFromQuery = (queryString) => {
-    const queryWords = queryString.toLocaleLowerCase().replaceAll("\n", "").replaceAll("\t", "").replaceAll("  ", " ").split(" ")
-    let queriedTutorials = []
-    tutorials.forEach(tutorial => {
-        let queryScore = 0
-        queryWords.forEach(queryWord => {
-            tutorial.keywords.forEach(keyword => {
-                if(queryWord != ""){
-                    if(keyword === queryWord){
-                        queryScore += 1.5
-                    } else if(queryWord.includes(keyword) || keyword.includes(queryWord)){
-                        queryScore++
-                    }
-                }
-            })
-        })
-        if(queryScore != 0){
-            queriedTutorials.push({
-                tutorial,
-                queryScore
-            })
-        }
-    })
-    queriedTutorials = queriedTutorials.sort((a, b) => {
-        if(a.queryScore >= b.queryScore){
-            return -1
-        } else {
-            return 1
-        }
-    })
-    return queriedTutorials
-}
+import tutorials from "../../content/tutorials.js"
 
 const TutorialSearch = () => {
 
     let [searchQuery, setSearchQuery] = useState("")
-    let searchResultsJSON = getTutorialsFromQuery(searchQuery)
+    let searchResultsJSON = generateSearchResults(searchQuery, tutorials)
 
     return (
         <Page smallText={
@@ -94,8 +63,8 @@ const TutorialSearch = () => {
                 } onChange={() => {
                     setSearchQuery(document.getElementById("searchBar").value)
                 }}/>
-                <SearchResults searchResultsJSON={searchResultsJSON} generateSearchResultMeta={(item) => {
-                    const { id, title, description, imageSource, difficulty } = item.tutorial
+                <SearchResults searchResultsJSON={searchResultsJSON} generateSearchResultMeta={({searchResult}) => {
+                    const { id, title, description, imageSource, difficulty } = searchResult
                     return { id, title, description, imageSource, difficulty }
                 }} hasDifficultyRating hashRoute="Tutorials"/>
             </main>
@@ -141,6 +110,7 @@ const TutorialPage = () => {
                         <div className="problem">
                         {
                                 (() => {
+                                    // Generate formatted html for the practice problem and solution, by line
                                     const text = []
                                     const [ problemText, problemSolution ] = problem1.split("\n\n")
 
@@ -156,6 +126,7 @@ const TutorialPage = () => {
                                         text.push(<br key={"solutionBreak-"+index}/>)
                                     })
 
+                                    // Remove the unnecessary line break at the end
                                     text.pop()
 
                                     return text
@@ -165,6 +136,7 @@ const TutorialPage = () => {
                         <div className="problem">
                             {
                                 (() => {
+                                    // ! Same formatting as previous problem
                                     const text = []
                                     const [ problemText, problemSolution ] = problem2.split("\n\n")
 
@@ -195,6 +167,9 @@ const TutorialPage = () => {
 
 const Tutorials = () => {
     return (
+        // If the current url hash contains a query
+        //   Display the specific tutorial queried
+        //   Otherwise, display the search page
         window.location.hash.includes("?") ?
             <TutorialPage/> : <TutorialSearch/>
     )

@@ -28,6 +28,7 @@ const App = () => {
         About
     }
 
+    // If the hash of the current page is not a valid one, default to main and reload
     const page = window.location.hash.split("?")[0].slice(1)
     if(!pages.hasOwnProperty(page)){
         window.location.hash = "Main"
@@ -40,6 +41,7 @@ const App = () => {
 
     document.title = "My Math Tutor - "+page
 
+    // Return the current page
     return (
         <React.Fragment>
             {

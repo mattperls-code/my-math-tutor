@@ -11,17 +11,24 @@ import React, { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faHome, faChalkboardTeacher, faBrain, faCalculator, faInfoCircle } from "@fortawesome/free-solid-svg-icons"
 
+import generateSearchResults from "../../scripts/generateSearchResults"
+
 import "./styles.scss"
 
 import tutorials from "../../content/tutorials.js"
 import worksheets from "../../content/worksheets.js"
 
+// Since the nav search bar can find worksheets and tutorials, group them and specify which type each is
 const content = [
     ...tutorials.map(tutorial => {return {type: "Tutorial", ...tutorial}}),
     ...worksheets.map(worksheet => {return {type: "Worksheet", ...worksheet}})
 ]
 
 const Icon = ({ float, icon, label, page}) => {
+    
+    // Hoverable icon
+    // ! Create a subcomponent for this to help with organization
+    // ! Make "NavBar/Icon/<componentAndStyles>"
 
     let [ showLabel, setShowLabel ] = useState(false)
 
@@ -54,40 +61,8 @@ const Icon = ({ float, icon, label, page}) => {
     )
 }
 
-const getContentFromQuery = (queryString) => {
-    const queryWords = queryString.toLocaleLowerCase().replaceAll("\n", "").replaceAll("\t", "").replaceAll("  ", " ").split(" ")
-    let queriedTutorials = []
-    content.forEach(item => {
-        let queryScore = 0
-        queryWords.forEach(queryWord => {
-            [...item.keywords, item.type.toLowerCase()].forEach(keyword => {
-                if(queryWord != ""){
-                    if(keyword === queryWord){
-                        queryScore += 1.5
-                    } else if(queryWord.includes(keyword) || keyword.includes(queryWord)){
-                        queryScore++
-                    }
-                }
-            })
-        })
-        if(queryScore != 0){
-            queriedTutorials.push({
-                content: item,
-                queryScore
-            })
-        }
-    })
-    queriedTutorials = queriedTutorials.sort((a, b) => {
-        if(a.queryScore >= b.queryScore){
-            return -1
-        } else {
-            return 1
-        }
-    })
-    return queriedTutorials
-}
-
 const NavBar = ({ smallText }) => {
+    // Allows for dynamic resizing of the window to not affect responsiveness
     let [windowWidth, setWindowWidth] = useState(window.innerWidth)
     let [windowHeight, setWindowHeight] = useState(window.innerHeight)
     window.addEventListener("resize", () => {
@@ -99,17 +74,25 @@ const NavBar = ({ smallText }) => {
 
     let [searchBarFocused, setSearchBarFocused] = useState(false)
     let [searchQuery, setSearchQuery] = useState("")
-    let searchResultsJSON = getContentFromQuery(searchQuery).slice(0, (
+
+    // Makes the search output not excede the height of the screen
+    let searchResultsJSON = generateSearchResults(searchQuery, content).slice(0, (
         Math.floor((windowHeight-90)/90)
     ))
 
     document.addEventListener("click", () => {
         setShowHamburgerMenu(false)
+        // If the nav search bar is focused, show the results
         setSearchBarFocused(document.activeElement == document.getElementById("navSearchBar"))
     })
 
     return (
         <div className={"navBar"}>
+            {
+                // If the window width is less than 550
+                //   Show the hamburger navigation and small title
+                // TODO: Conditionally render, don't change display
+            }
             <div style={{display: windowWidth < 550 ? "inline" : "none"}}>
                 <div onClick={(e) => {
                     e.stopPropagation()
@@ -195,6 +178,11 @@ const NavBar = ({ smallText }) => {
                     </span>
                 </div>
             </div>
+            {
+                // If the window width is greater than or equal to 550
+                //   Show hoverable icon navigation
+                // TODO: Conditionally render, don't change display
+            }
             <div style={{display: windowWidth < 550 ? "none" : "inline"}}>
                 <Icon float={"left"} icon={faHome} label={
                     {
@@ -236,6 +224,11 @@ const NavBar = ({ smallText }) => {
                         German: "Information"
                     }[localStorage.getItem("language")]
                 } page={"About"}/>
+                {
+                    // If the window width is greater than 825
+                    //   Show the nav search bar
+                    // TODO: Conditionally render, don't change display
+                }
                 <div style={{display: windowWidth > 825 ? "inline" : "none"}}>
                     <div className={"searchBarContainer"}>
                         <input id={"navSearchBar"} className={"searchBarInput"} type={"text"} placeholder={
@@ -252,20 +245,25 @@ const NavBar = ({ smallText }) => {
                             <div className={"searchResults"}>
                                 {
                                     (() => {
+                                        // Don't automatically fill results
+                                        if(searchQuery == ""){
+                                            return []
+                                        }
+                                        // Format the search results as html
                                         const searchResultElements = []
-                                        searchResultsJSON.forEach((searchResult, index) => {
+                                        searchResultsJSON.forEach(({searchResult}, index) => {
                                             searchResultElements.push(
                                                 <div className={"result"} key={index} onClick={() => {
-                                                    window.location.hash = searchResult.content.type + "s?" + searchResult.content.id
+                                                    window.location.hash = searchResult.type + "s?" + searchResult.id
                                                 }}>
                                                     <strong style={{fontWeight: 900, fontSize: "22px"}}>
                                                         {
-                                                            searchResult.content.type+":"
+                                                            searchResult.type + (!searchResult?.noResults && ":")
                                                         }
                                                     </strong>
                                                     <div className={"lineBreak"}></div>
                                                     {
-                                                        searchResult.content.title
+                                                        searchResult.title
                                                     }
                                                 </div>
                                             )

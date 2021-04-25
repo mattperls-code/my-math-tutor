@@ -18,6 +18,8 @@ const TranslateToggle = () => {
     let [ showTranslateSelector, setTranslateSelector ] = useState(false)
     let [ buttonBottom, setButtonBottom ] = useState(window.innerHeight - 15)
     let buttonRef = useRef(null)
+
+    // Make navigation button always at the bottom of the screen unless the bottom bar has been moved into view
     useLayoutEffect(() => {
         document.getElementsByClassName("content")[0].addEventListener("scroll", () => {
             setButtonBottom(Math.max(window.innerHeight-document.getElementsByClassName("bottomBar")[0].getBoundingClientRect().top,0))

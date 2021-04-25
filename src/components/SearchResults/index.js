@@ -15,6 +15,32 @@ const SearchResults = ({searchResultsJSON, generateSearchResultMeta, hasDifficul
         <div className="searchBarListContainer">
             {
                 (() => {
+                    console.log(searchResultsJSON)
+                    if(searchResultsJSON[0].searchResult?.noResults){
+                        return (
+                            <React.Fragment>
+                                <div className={"noResultsFoundWarning"}>
+                                    {
+                                        {
+                                            English: "Sorry, No Results Found",
+                                            Spanish: "Lo Sentimos, No Se Han Encontrado Resultados",
+                                            French: "Désolé, Aucun Résultat Trouvé",
+                                            German: "Entschuldigung, keine Ergebnisse gefunden"
+                                        }[localStorage.getItem("language")]
+                                    }
+                                    <br/>
+                                    {
+                                        {
+                                            English: "Try Searching For Something Else",
+                                            Spanish: "Intenta Buscar Algo Más",
+                                            French: "Essayez De Rechercher Autre Chose",
+                                            German: "Versuchen Sie, Nach Etwas Anderem Zu Suchen"
+                                        }[localStorage.getItem("language")]
+                                    }
+                                </div>
+                            </React.Fragment>
+                        )
+                    }
                     let searchResultElements = []
                     searchResultsJSON.forEach((searchResult, index) => {
                         if(hasDifficultyRating){
@@ -34,7 +60,7 @@ const SearchResults = ({searchResultsJSON, generateSearchResultMeta, hasDifficul
                                             description
                                         }
                                         <br/><br/>
-                                        <strong>Difficult</strong>: {
+                                        <strong>Difficulty</strong>: {
                                             difficulty
                                         }
                                     </div>

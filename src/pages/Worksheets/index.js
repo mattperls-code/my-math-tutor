@@ -14,6 +14,8 @@ import Page from "../../components/Page/index"
 import SearchBar from "../../components/SearchBar/index"
 import SearchResults from "../../components/SearchResults/index"
 
+import generateSearchResults from "../../scripts/generateSearchResults"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCloudDownloadAlt } from "@fortawesome/free-solid-svg-icons"
 
@@ -21,43 +23,10 @@ import domToImage from "dom-to-image"
 
 import worksheets from "../../content/worksheets.js"
 
-const getWorksheetsFromQuery = (queryString) => {
-    const queryWords = queryString.toLocaleLowerCase().replaceAll("\n", "").replaceAll("\t", "").replaceAll("  ", " ").split(" ")
-    let queriedWorksheets = []
-    worksheets.forEach(worksheet => {
-        let queryScore = 0
-        queryWords.forEach(queryWord => {
-            worksheet.keywords.forEach(keyword => {
-                if(queryWord != ""){
-                    if(keyword === queryWord){
-                        queryScore += 1.5
-                    } else if(queryWord.includes(keyword) || keyword.includes(queryWord)){
-                        queryScore++
-                    }
-                }
-            })
-        })
-        if(queryScore != 0){
-            queriedWorksheets.push({
-                worksheet,
-                queryScore
-            })
-        }
-    })
-    queriedWorksheets = queriedWorksheets.sort((a, b) => {
-        if(a.queryScore >= b.queryScore){
-            return -1
-        } else {
-            return 1
-        }
-    })
-    return queriedWorksheets
-}
-
 const WorksheetSearch = () => {
 
     let [searchQuery, setSearchQuery] = useState("")
-    let searchResultsJSON = getWorksheetsFromQuery(searchQuery)
+    let searchResultsJSON = generateSearchResults(searchQuery, worksheets)
 
     return (
         <Page smallText={
@@ -99,8 +68,8 @@ const WorksheetSearch = () => {
                 } onChange={() => {
                     setSearchQuery(document.getElementById("searchBar").value)
                 }}/>
-                <SearchResults searchResultsJSON={searchResultsJSON} generateSearchResultMeta={(item) => {
-                    const { id, title, description, imageSource, difficulty } = item.worksheet
+                <SearchResults searchResultsJSON={searchResultsJSON} generateSearchResultMeta={({searchResult}) => {
+                    const { id, title, description, imageSource, difficulty } = searchResult
                     return { id, title, description, imageSource, difficulty }
                 }} hasDifficultyRating hashRoute="Worksheets"/>
             </main>
@@ -125,8 +94,11 @@ const WorksheetPage = () => {
         ]
     )
 
+    // Get id of current worksheet from url hash
     const worksheetId = window.location.hash.split("?")[1]
+    // Get worksheet by id from content
     let worksheetInfo = worksheets.find(worksheet => worksheet.id == worksheetId)
+    // If the worksheet wasn't found, default back to worksheets page
     if(typeof worksheetInfo != "object"){
         window.location.hash = "Worksheets"
     } else {
@@ -147,11 +119,13 @@ const WorksheetPage = () => {
                 <main className="wrapper">
                     <div className="description">
                         {
+                            // Capitalize each word of the description
                             worksheetInfo.description.split(" ").map(text => text.slice(0,1).toUpperCase() + text.slice(1)).join(" ")
                         }
                     </div>
                     <div className="page">
                         <div className="download" onClick={() => {
+                            // Get downloadable html page, domToImage, and automatically download
                             document.getElementById("problems").style.display = "flex"
                             domToImage.toPng(document.getElementById("problems"), {
                                 bgcolor: "white"
@@ -159,6 +133,7 @@ const WorksheetPage = () => {
                                 document.getElementById("problems").style.display = "none"
                                 let autoDownloadLink = document.createElement("a")
                                 autoDownloadLink.href = dataURL
+                                // MyMathTutor-TitleOfWorksheetProblems
                                 autoDownloadLink.download = "MyMathTutor-"+worksheetInfo.title.split(" ").map(text => text.slice(0,1).toUpperCase() + text.slice(1)).join("")+"WorksheetProblems.png"
                                 document.body.append(autoDownloadLink)
                                 autoDownloadLink.click()
@@ -182,11 +157,15 @@ const WorksheetPage = () => {
                                             <div className="text">
                                                 {
                                                     (() => {
+                                                        // Formatting each problem problem
                                                         let problemText = problem.split(";")[0].replaceAll("*", "•")
+                                                        // If the problem contains a fraction, convert that fraction to html
                                                         if(problemText.includes("_")){
                                                             let tempProblemElementChild = []
                                                             let rawFractionText = ""
                                                             let isInsideFracion = false
+                                                            // Loop through each character
+                                                            //   Find numerator and denominator, and format as html
                                                             for(let i = 0;i<problemText.length;i++){
                                                                 if(problemText[i] == "_"){
                                                                     isInsideFracion = !isInsideFracion
@@ -227,6 +206,7 @@ const WorksheetPage = () => {
                     </div>
                     <div className="page">
                         <div className="download" onClick={() => {
+                            // ! Same download process as before
                             document.getElementById("solutions").style.display = "flex"
                             domToImage.toPng(document.getElementById("solutions"), {
                                 bgcolor: "white"
@@ -255,21 +235,24 @@ const WorksheetPage = () => {
                                                 }
                                             </div>
                                             {
-                                                showSolutions[index] == false ?
+                                                // Toggle show solution button
+                                                !showSolutions[index] &&
                                                     (
                                                         <div className="revealSolutionButton" onClick={() => {
                                                             let tempShowSolutions = [...showSolutions]
                                                             tempShowSolutions[index] = true
                                                             setShowSolutions(tempShowSolutions)
                                                         }}>Show<br/>Solution</div>
-                                                    ) : null
+                                                    )
                                             }
                                             <div className={showSolutions[index] ? "text" : "text blur"}>
                                                 {
+                                                    // If the solution is not visible, blur it
                                                     (() => {
                                                         const solutions = [];
                                                         var solutionSet = problem.split(";")[1].slice(2, -1).split(" | ")
                                                         solutionSet.forEach(solution => {
+                                                            // ! Same fraction to html code as before
                                                             if(solution.includes("_")){
                                                                 let tempSolutionElementChild = []
                                                                 let rawFractionText = ""
@@ -305,6 +288,7 @@ const WorksheetPage = () => {
                                                             }
                                                         })
                                                         const solutionElements = []
+                                                        // For multiple solutions, format with a break between each
                                                         for(let i = 0;i<solutions.length-1;i++){
                                                             solutionElements.push(solutions[i])
                                                             solutionElements.push(
@@ -342,6 +326,7 @@ const WorksheetPage = () => {
                                             <div className="text">
                                                 {
                                                     (() => {
+                                                        // ! Same as before
                                                         let problemText = problem.split(";")[0].replaceAll("*", "•")
                                                         if(problemText.includes("_")){
                                                             let tempProblemElementChild = []
@@ -403,6 +388,7 @@ const WorksheetPage = () => {
                                                         const solutions = [];
                                                         var solutionSet = problem.split(";")[1].slice(2, -1).split(" | ")
                                                         solutionSet.forEach(solution => {
+                                                            // ! Same as before
                                                             if(solution.includes("_")){
                                                                 let tempSolutionElementChild = []
                                                                 let rawFractionText = ""
@@ -469,6 +455,9 @@ const WorksheetPage = () => {
 
 const Worksheets = () => {
     return (
+        // If the current url hash contains a query
+        //   Display the specific worksheet queried
+        //   Otherwise, display the search page
         window.location.hash.includes("?") ?
             <WorksheetPage/> : <WorksheetSearch/>
     )

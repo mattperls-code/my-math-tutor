@@ -12,6 +12,15 @@
     margin-top: calc(2.5vh + 10px);
     text-align: center;
 
+    .noResultsFoundWarning {
+        width: calc(70vw - 20px);
+        margin: auto;
+        margin-top: 40px;
+        font-family: "Titillium Web";
+        font-size: calc(1.5vw + 16px);
+        color: white;
+    }
+
     .result {
         display: inline-block;
         width: calc(min(max(20vw, 5vw + 280px), 85vw) - 20px);
