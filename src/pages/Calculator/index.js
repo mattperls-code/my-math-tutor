@@ -96,7 +96,7 @@ const Calculator = () => {
                             if(solutionElement == null){
                                 return
                             } else if(solutionElement.successful){
-                                return <div className="text">{ solutionElement.output.replaceAll(",", ",\n") }</div>
+                                return <div className="text">{ solutionElement.output.replaceAll(",", ", ") }</div>
                             } else {
                                 return <div className="error">{ solutionElement.output }</div>
                             }

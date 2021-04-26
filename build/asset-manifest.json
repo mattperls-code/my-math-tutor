@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/my-math-tutor/static/css/main.d60f4115.chunk.css",
-    "main.js": "/my-math-tutor/static/js/main.977e3a91.chunk.js",
-    "main.js.map": "/my-math-tutor/static/js/main.977e3a91.chunk.js.map",
-    "runtime-main.js": "/my-math-tutor/static/js/runtime-main.353a0081.js",
-    "runtime-main.js.map": "/my-math-tutor/static/js/runtime-main.353a0081.js.map",
-    "static/js/2.81b3a71a.chunk.js": "/my-math-tutor/static/js/2.81b3a71a.chunk.js",
-    "static/js/2.81b3a71a.chunk.js.map": "/my-math-tutor/static/js/2.81b3a71a.chunk.js.map",
+    "main.js": "/my-math-tutor/static/js/main.14fd5748.chunk.js",
+    "main.js.map": "/my-math-tutor/static/js/main.14fd5748.chunk.js.map",
+    "runtime-main.js": "/my-math-tutor/static/js/runtime-main.a3016e72.js",
+    "runtime-main.js.map": "/my-math-tutor/static/js/runtime-main.a3016e72.js.map",
+    "static/js/2.3f1c3198.chunk.js": "/my-math-tutor/static/js/2.3f1c3198.chunk.js",
+    "static/js/2.3f1c3198.chunk.js.map": "/my-math-tutor/static/js/2.3f1c3198.chunk.js.map",
     "index.html": "/my-math-tutor/index.html",
     "static/css/main.d60f4115.chunk.css.map": "/my-math-tutor/static/css/main.d60f4115.chunk.css.map",
-    "static/js/2.81b3a71a.chunk.js.LICENSE.txt": "/my-math-tutor/static/js/2.81b3a71a.chunk.js.LICENSE.txt",
+    "static/js/2.3f1c3198.chunk.js.LICENSE.txt": "/my-math-tutor/static/js/2.3f1c3198.chunk.js.LICENSE.txt",
     "static/media/DA.png": "/my-math-tutor/static/media/DA.7cf3a782.png",
     "static/media/DM.png": "/my-math-tutor/static/media/DM.db246ba7.png",
     "static/media/DS.png": "/my-math-tutor/static/media/DS.e0557ba5.png",
@@ -34,9 +34,9 @@
     "static/media/styles.scss": "/my-math-tutor/static/media/mathTextOverlay.edde6ab0.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.353a0081.js",
-    "static/js/2.81b3a71a.chunk.js",
+    "static/js/runtime-main.a3016e72.js",
+    "static/js/2.3f1c3198.chunk.js",
     "static/css/main.d60f4115.chunk.css",
-    "static/js/main.977e3a91.chunk.js"
+    "static/js/main.14fd5748.chunk.js"
   ]
 }

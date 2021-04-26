@@ -22,7 +22,7 @@ const calculateOutput = (problem) => {
         if(problem.includes("=")){
             let activeVariables = []
             for(let i = 0;i<problem.length;i++){
-                if("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(problem[i]) && activeVariables.indexOf(problem[i]) == -1){
+                if("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(problem[i]) && !activeVariables.includes(problem[i])){
                     activeVariables.push(problem[i])
                 }
             }
@@ -47,7 +47,7 @@ const calculateOutput = (problem) => {
                 }
             } else {
                 const variableValue = solution.solveFor(targetVar)
-                if(variableValue == undefined){
+                if(variableValue == undefined || (Array.isArray(variableValue) && variableValue.length == 0)){
                     return {
                         successful: false,
                         output: "Unable To Find Solution. This May Mean The Problem Has No Real Solutions Or That There Is No Definite Answer"
@@ -64,7 +64,7 @@ const calculateOutput = (problem) => {
             return false
         } else {
             const solution = parse(problem)
-            if(solution == undefined){
+            if(solution == undefined || (Array.isArray(solution) && solution.length == 0)){
                 return {
                     successful: false,
                     output: "Unable To Find Solution. This May Mean The Problem Has No Real Solutions Or That There Is No Definite Answer"
