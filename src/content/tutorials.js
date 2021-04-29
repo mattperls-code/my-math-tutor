@@ -24,7 +24,7 @@ const tutorials = [
             "introduction": "Linear one variable equations are equations that only contain one variable, and that variable is only raised to the first power.",
             "instructions": "To solve a linear one variable equation, you must move all variables from both sides of the equation to one side and then move all constant values to the other side. This means following the order of operations to systematically sperate the constants and variables. Remember that with algebra, anything you do to one side must be done to the other, so if moving a variable or constant requires you to do an operation, it must be done on the other side too.",
             "problem1": "3x - 2 = 10\n3x - 2 (+2) = 10 (+2)\n3x = 12\n3x (/3) = 12 (/3)\nx = 4\n\nFirst, we added 2 to both sides of the equation to further isolate the variable x.\nThen we divided both sides by 3, in order to get the variable by itself.\nFrom there, we have the answer: x = 4.",
-            "problem2": "-2x + 5 = 4\n-2x + 5 (-5) = 4 (-5)\n-2x = -1\n-2x (/-2) = -1 (/-2)\nx = -1/2\n\nFirst We subtracted 5 from both sides of the equation to remove the constant from that side.\nNext, we divided both sides by -2, in order to isolate the variable.\nThat left the solution, x = -1/2."
+            "problem2": "-2x + 5 = 4\n-2x + 5 (-5) = 4 (-5)\n-2x = -1\n-2x (/-2) = -1 (/-2)\nx = 1/2\n\nFirst We subtracted 5 from both sides of the equation to remove the constant from that side.\nNext, we divided both sides by -2, in order to isolate the variable.\nThat left the solution, x = -1/2."
         }
     },
     {
