@@ -52,7 +52,7 @@ const calculateOutput = (problem) => {
                 previousPrompt = true
                 if(activeVariables.includes(variable)){
                     targetVar = variable
-                } else if(variable == ""){
+                } else if(variable.trim() == ""){
                     // Makes loop user breakable
                     return false;
                 }

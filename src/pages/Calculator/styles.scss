@@ -50,7 +50,7 @@
 .solution {
     margin: auto;
     margin-top: 40px;
-    width: calc((30vw + 150px));
+    width: calc((32.5vw + 175px));
     text-align: center;
 
     .error {
@@ -65,5 +65,6 @@
         font-size: calc((30vw + 150px) * 0.08);
         color: rgb(216, 216, 216);
         text-shadow: 0 0 5px rgb(27, 17, 75);
+        word-break: break-all;
     }
 }
